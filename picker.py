@@ -13,16 +13,18 @@ def readCSV():
 	return team
 
 def randomizeList(source,dest):
-	# load randomized data
+	# store count participants
+	team_count = len(source)
+	
 	for t in range(team_count):
 		# pick one at random
-		r = random.randrange(0, len(team))
+		r = random.randrange(0, len(source))
 	
-		# add to randomized list
-		rand_team.append(team[r])
+		# add to destination randomized list
+		dest.append(team[r])
 	
 		# remove from source list
-		team.remove(team[r])
+		source.remove(source[r])
 		
 	# return both source and destination
 	return source, dest
@@ -31,12 +33,7 @@ def randomizeList(source,dest):
 print("howdy. let's get started")
 
 # read list of participants
-team = []
-
 team = readCSV()
-
-# store count participants
-team_count = len(team)
 
 #init random team container
 rand_team = []
