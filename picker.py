@@ -17,28 +17,28 @@ rand_team = []
 
 # load randomized data
 for t in range(team_count):
-	# pick one at random
-	r = random.randrange(0, len(team))
-	
-	# add to randomized list
-	rand_team.append(team[r])
-	
-	# remove from source list
-	team.remove(team[r])
+    # pick one at random
+    r = random.randrange(0, len(team))
+
+    # add to randomized list
+    rand_team.append(team[r])
+
+    # remove from source list
+    team.remove(team[r])
 
 # output new list
 print(rand_team)
 
 def readCSV():
-	team = []
-	with open('names.csv', newline='') as csvfile:
-    		reader = csv.DictReader(csvfile)
-    		for row in reader:
-        	team.append(row['first_name'])
-	return team
+    team = []
+    with open('names.csv', newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+        team.append(row['first_name'])
+        return team
+
 # type name letter by letter
 
 # ask user if theyd like
 # to pick again
-
 
