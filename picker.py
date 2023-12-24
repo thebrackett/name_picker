@@ -7,10 +7,7 @@ print("howdy. let's get started")
 # read list of participants
 team = []
 
-with open('names.csv', newline='') as csvfile:
-    reader = csv.DictReader(csvfile)
-    for row in reader:
-        team.append(row['first_name'])
+team = readCSV()
 
 # store count participants
 team_count = len(team)
@@ -32,8 +29,13 @@ for t in range(team_count):
 # output new list
 print(rand_team)
 
-
-
+def readCSV():
+	team = []
+	with open('names.csv', newline='') as csvfile:
+    		reader = csv.DictReader(csvfile)
+    		for row in reader:
+        	team.append(row['first_name'])
+	return team
 # type name letter by letter
 
 # ask user if theyd like
