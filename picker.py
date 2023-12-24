@@ -35,9 +35,8 @@ def readCSV():
 	# read csv and load into team
 	with open('names.csv', newline='') as csvfile:
 		reader = csv.DictReader(csvfile)
-			for row in reader:
-				team.append(row['first_name'])
-				
+		for row in reader:
+			team.append(row['first_name'])
 	return team
 
 # type name letter by letter
