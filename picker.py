@@ -3,6 +3,7 @@ import csv
 
 # define functions
 def readCSV():
+	# init team var
 	team = []
 
 	# read csv and load into team
@@ -13,13 +14,13 @@ def readCSV():
 	return team
 
 def randomizeList(source):
-
 	# init destination list
 	dest = []
 
 	# store count participants
 	team_count = len(source)
-	
+
+	# iterate through and build randomized list
 	for t in range(team_count):
 		# pick one at random
 		r = random.randrange(0, len(source))
@@ -36,17 +37,12 @@ def randomizeList(source):
 # greeting
 print("howdy. let's get started")
 
-# read list of participants
+# load list of participants
 team = readCSV()
 
-#randomize list
+# create randomized list
 rand_team = randomizeList(team)
 
 # output new list
 print(rand_team)
-
-# type name letter by letter
-
-# ask user if theyd like
-# to pick again
 
