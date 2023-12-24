@@ -1,6 +1,8 @@
 import random
 import csv
 
+# hi charity!
+
 # define functions
 def readCSV():
 	# init team var
