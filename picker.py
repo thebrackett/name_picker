@@ -1,6 +1,17 @@
 import random
 import csv
 
+# define functions
+def readCSV():
+	team = []
+
+	# read csv and load into team
+	with open('names.csv', newline='') as csvfile:
+		reader = csv.DictReader(csvfile)
+		for row in reader:
+			team.append(row['first_name'])
+	return team
+
 # greeting
 print("howdy. let's get started")
 
@@ -28,16 +39,6 @@ for t in range(team_count):
 
 # output new list
 print(rand_team)
-
-def readCSV():
-	team = []
-
-	# read csv and load into team
-	with open('names.csv', newline='') as csvfile:
-		reader = csv.DictReader(csvfile)
-		for row in reader:
-			team.append(row['first_name'])
-	return team
 
 # type name letter by letter
 
