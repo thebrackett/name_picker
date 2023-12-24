@@ -1,10 +1,16 @@
 import random
+import csv
 
 # greeting
 print("howdy. let's get started")
 
 # read list of participants
-team = [ 'scott', 'jim', 'allison']
+team = []
+
+with open('names.csv', newline='') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        team.append(row['first_name'])
 
 # store count participants
 team_count = len(team)
@@ -23,6 +29,7 @@ for t in range(team_count):
 	# remove from source list
 	team.remove(team[r])
 
+# output new list
 print(rand_team)
 
 
