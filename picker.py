@@ -39,7 +39,7 @@ def printAll(output):
 		print(f'- {o}')
 
 # greeting
-print("howdy. let's get started")
+print(f'howdy! Today it\'s:\n{"-"*10}')
 
 # load list of participants
 team = readCSV()
