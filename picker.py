@@ -34,6 +34,10 @@ def randomizeList(source):
 	# return both source and destination
 	return dest
 
+def printAll(output):
+	for o in output:
+		print(f'- {o}')
+
 # greeting
 print("howdy. let's get started")
 
@@ -44,5 +48,5 @@ team = readCSV()
 rand_team = randomizeList(team)
 
 # output new list
-print(rand_team)
+printAll(rand_team)
 
