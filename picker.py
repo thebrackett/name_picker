@@ -1,5 +1,17 @@
 import random
 import csv
+import argparse
+ 
+# Initialize parser
+parser = argparse.ArgumentParser()
+ 
+# Adding optional argument
+parser.add_argument("-o", "--Output", help = "Show one or all at once.")
+
+# Read arguments from command line
+args = parser.parse_args()
+
+output_style = args.Output
 
 # define functions
 def readCSV():
@@ -48,5 +60,8 @@ team = readCSV()
 rand_team = randomizeList(team)
 
 # output new list
-printAll(rand_team)
+if(output_style == "one"):
+	print("one at a time")
+else:
+	printAll(rand_team)
 
