@@ -46,6 +46,7 @@ def randomizeList(source):
 	# return both source and destination
 	return dest
 
+# print to screen
 def printAll(output):
 	for o in output:
 		print(f'- {o}')
@@ -61,7 +62,10 @@ rand_team = randomizeList(team)
 
 # output new list
 if(output_style == "one"):
-	print("one at a time")
+	print("next up... ")
+	# TODO: pick one at a time
+	# with pause and key press
+	# to advance to next name
 else:
 	printAll(rand_team)
 
