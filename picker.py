@@ -54,7 +54,7 @@ def typePrint(text):
 	for t in text:
 		sys.stdout.write(t)
 		sys.stdout.flush()
-		time.sleep(.05*random.randrange(0,9))
+		time.sleep(.07*random.randrange(0,5))
 
 
 # print to screen
@@ -66,7 +66,8 @@ def printAll(output):
 def printOne(output):
 	for o in output:
 		typePrint(o)
-		input('\n...')
+		input('\n')
+	print("that's everyone!\n")
 
 # greeting
 print(f'howdy! Today it\'s:\n{"-"*10}')
