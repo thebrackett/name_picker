@@ -1,6 +1,8 @@
 import random
 import csv
 import argparse
+import time
+import sys
  
 # Initialize parser
 parser = argparse.ArgumentParser()
@@ -11,6 +13,7 @@ parser.add_argument("-o", "--Output", help = "Show one or all at once.")
 # Read arguments from command line
 args = parser.parse_args()
 
+# assign to car for readability
 output_style = args.Output
 
 # define functions
@@ -46,10 +49,24 @@ def randomizeList(source):
 	# return both source and destination
 	return dest
 
+# print one letter at a type
+def typePrint(text):
+	for t in text:
+		sys.stdout.write(t)
+		sys.stdout.flush()
+		time.sleep(.05*random.randrange(0,9))
+
+
 # print to screen
 def printAll(output):
 	for o in output:
 		print(f'- {o}')
+
+# print one at a time
+def printOne(output):
+	for o in output:
+		typePrint(o)
+		input('\n...')
 
 # greeting
 print(f'howdy! Today it\'s:\n{"-"*10}')
@@ -66,6 +83,9 @@ if(output_style == "one"):
 	# TODO: pick one at a time
 	# with pause and key press
 	# to advance to next name
+	printOne(rand_team)
 else:
 	printAll(rand_team)
+
+
 
