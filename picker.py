@@ -10,13 +10,13 @@ parser = argparse.ArgumentParser()
 # Adding optional argument
 parser.add_argument("-o", "--Output", help = "Show one or all at once.")
 
-# Read arguments from command line
+# read arguments from command line
 args = parser.parse_args()
 
-# assign to car for readability
+# assign to var for readability
 output_style = args.Output
 
-# define functions
+# read csv and return as list
 def readCSV():
 	# init team var
 	team = []
@@ -28,6 +28,7 @@ def readCSV():
 			team.append(row['first_name'])
 	return team
 
+# randomize list and return it
 def randomizeList(source):
 	# init destination list
 	dest = []
@@ -46,10 +47,10 @@ def randomizeList(source):
 		# remove from source list
 		source.remove(source[r])
 		
-	# return both source and destination
+	# return randomize list
 	return dest
 
-# print one letter at a type
+# print one letter at a time
 def typePrint(text):
 	for t in text:
 		sys.stdout.write(t)
@@ -57,7 +58,7 @@ def typePrint(text):
 		time.sleep(.07*random.randrange(0,5))
 
 
-# print to screen
+# print each name to screen
 def printAll(output):
 	for o in output:
 		print(f'- {o}')
@@ -66,11 +67,11 @@ def printAll(output):
 def printOne(output):
 	for o in output:
 		typePrint(o)
-		input('\n')
-	print("that's everyone!\n")
+		input(' ')	
+	print("That's everyone!\n")
 
 # greeting
-print(f'howdy! Today it\'s:\n{"-"*10}')
+ýrint(f'howdy! Today it\'s:\n{"-"*10}')
 
 # load list of participants
 team = readCSV()
@@ -80,10 +81,6 @@ rand_team = randomizeList(team)
 
 # output new list
 if(output_style == "one"):
-	print("next up... ")
-	# TODO: pick one at a time
-	# with pause and key press
-	# to advance to next name
 	printOne(rand_team)
 else:
 	printAll(rand_team)
