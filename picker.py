@@ -71,7 +71,7 @@ def printOne(output):
 	print("That's everyone!\n")
 
 # greeting
-ýrint(f'howdy! Today it\'s:\n{"-"*10}')
+print(f'howdy! Today it\'s:\n{"-"*10}')
 
 # load list of participants
 team = readCSV()
