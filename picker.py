@@ -8,7 +8,7 @@ import sys
 parser = argparse.ArgumentParser()
  
 # Adding optional argument
-parser.add_argument("-o", "--Output", help = "Show one or all at once.")
+parser.add_argument("-o", "--Output", help = "Enter 'one' to set output to one at a time, or 'all' to print all names at once.")
 
 # read arguments from command line
 args = parser.parse_args()
@@ -25,7 +25,7 @@ def readCSV():
 	with open('names.csv', newline='') as csvfile:
 		reader = csv.DictReader(csvfile)
 		for row in reader:
-			team.append(row['first_name'])
+			team.append(f"{row['first_name']} {row['last_name']}")
 	return team
 
 # randomize list and return it
@@ -68,7 +68,7 @@ def printOne(output):
 	for o in output:
 		typePrint(o)
 		input(' ')	
-	print("That's everyone!\n")
+	print(f"That's everyone!\n")
 
 # greeting
 print(f'howdy! Today it\'s:\n{"-"*10}')
