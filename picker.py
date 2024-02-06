@@ -4,6 +4,7 @@ import argparse
 import time
 import sys
 from math import floor
+from math import ceil
 
 # Initialize parser
 parser = argparse.ArgumentParser()
@@ -90,18 +91,24 @@ rand_team = randomizeList(team)
 def createTeams(team, size):
     # take provided size and list of strings
     # break up into a list of lists
-    num_groups = floor(len(team)/size)
-
+    num_groups = ceil(len(team)/size)
+    
     new_teams = []
     start = 0
     end = size
 
     for i in range(0, num_groups):
+        if(len(team)-i==1):
+            break
         new_team = team[start:end]
         new_teams.append(new_team)
         start = start + size
         end = end + size
-
+        if (len(team)-end < 0):
+            end = len(team)
+        elif(len(team) - end == 1):
+            end = len(team)
+    
     return new_teams
 
 # define function to create groups
